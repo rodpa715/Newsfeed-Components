@@ -15,11 +15,24 @@ class Article {
     // expandButton.addEventListener("click", this.expandArticle)
 
     expandButton.addEventListener("click", () => this.expandArticle())
+
+    // stretch task (close button)
+    const headline = this.domElement.querySelector("h2")
+    const close = document.createElement("div")
+    close.className = "close"
+    headline.appendChild(close)
+    close.addEventListener("click", () => this.closeArticle())
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle("article-open")
+  }
+  // stretch task (close button)
+  closeArticle(){
+    this.domElement.classList.add("close-fade")
+    setTimeout(() => this.domElement.style.display = "none", 1100)
+    
   }
 }
 

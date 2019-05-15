@@ -34,7 +34,7 @@ class Article {
 
   closeArticle(){
     this.domElement.classList.add("close-fade")
-    setTimeout(() => this.domElement.style.display = "none", 1100)
+    setTimeout(() => this.domElement.style.display = "none", 1000)
     
   }
 }

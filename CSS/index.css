@@ -105,6 +105,17 @@
 .article-open {
   height: 400px;
 }
+.close {
+  background-image: url("https://image.flaticon.com/icons/png/128/148/148766.png");
+  background-size: cover;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+.close-fade {
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
 html,
 body {
   margin: 0;

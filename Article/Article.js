@@ -44,8 +44,96 @@ class Article {
 - Select all classes named ".article" and assign that value to the articles variable.  
 
 - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
-
 */
 
-let articles = document.querySelectorAll(".article");
+const articles = document.querySelectorAll(".article");
 articles.forEach( article => new Article(article))
+
+
+///// STRETCH TASK Component Constructor -- Articles
+
+/*
+const articles2 = [
+  {
+    date: "31 February 2013",
+    headline: "Something cool",
+    paragraph: "something cool paragraph"
+  },
+  {
+    date: "31 February 2013",
+    headline: "Something amazing",
+  paragraph: "something cool paragraph"
+},
+{
+  date: "31 February 2013",
+  headline: "Something great",
+  paragraph: "something cool paragraph"
+},
+{
+  date: "31 February 2013",
+  headline: "Something fantastico",
+  paragraph: "something cool paragraph"
+}]
+class ArticleGenerator{
+  constructor(articlesContainer, data){
+    this.articlesContainer = articlesContainer;
+    this.data = data;
+    this.createArticle();
+    this.createExpandButton();
+    this.createHeadline();
+    this.createDate();
+    this.createParagraph();
+    this.createCloseButton();
+  }
+  createArticle(){
+    this.articleDiv = document.createElement("div")
+    this.articleDiv.className ="article"
+    this.articlesContainer.appendChild(this.articleDiv)
+  }
+  
+  createHeadline(){
+    this.headline = document.createElement("h2")
+    this.headline.textContent = this.data.headline;
+    this.articleDiv.appendChild(this.headline)
+  }
+  createDate(){
+    this.date = document.createElement("p")
+    this.date.textContent = this.data.date;
+    this.date.className = "date"
+    this.articleDiv.appendChild(this.date)
+  }
+  createParagraph(){
+    this.paragraph = document.createElement("p")
+    this.paragraph.textContent = this.data.paragraph;
+    this.articleDiv.appendChild(this.paragraph)
+  }
+
+  createExpandButton(){
+    const expandButton = document.createElement("span");
+    expandButton.textContent = "Read More"
+    expandButton.className = "expandButton";
+    this.articleDiv.appendChild(expandButton);
+    expandButton.addEventListener("click", () => this.expandArticle())
+  }
+  expandArticle() {
+    this.articleDiv.classList.toggle("article-open")
+  }
+  // stretch task (close button)
+  createCloseButton(){
+    const close = document.createElement("div")
+    close.className = "close"
+    this.headline.appendChild(close)
+    close.addEventListener("click", () => this.closeArticle())
+  }
+  closeArticle(){
+    this.articleDiv.classList.add("close-fade")
+    setTimeout(() => this.articleDiv.style.display = "none", 1000)
+  }
+}
+
+
+const articlesContainer = document.querySelector(".articles");
+articles2.forEach( (container, index) => {
+  new ArticleGenerator(articlesContainer, articles2[index])
+})
+*/
